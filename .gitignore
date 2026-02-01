@@ -1,0 +1,22 @@
+# Secrets
+.env
+firmware/scanner/config.h
+
+# Binaries
+app
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Local Go Environment (Workaround dirs)
+.go/
+.cache/
+.tmp/
+
+# OS specific
+.DS_Store
+
+# Editor/IDE
+.idea/
+.vscode/

@@ -1,0 +1,19 @@
+#!/bin/sh
+# Pre-commit hook to run tests
+
+echo "Running tests before commit..."
+
+# Run tests
+if ! go test ./...; then
+    echo "❌ Tests failed. Commit aborted."
+    exit 1
+fi
+
+# Run tests with race detector
+if ! go test -race ./internal/...; then
+    echo "❌ Race detector found issues. Commit aborted."
+    exit 1
+fi
+
+echo "✅ All tests passed. Proceeding with commit."
+exit 0

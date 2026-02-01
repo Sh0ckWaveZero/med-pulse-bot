@@ -1,0 +1,279 @@
+{
+  "collections": [
+    {
+      "id": "_pb_users_auth_",
+      "name": "users",
+      "type": "auth",
+      "system": false,
+      "schema": [
+        {
+          "system": false,
+          "id": "users_name",
+          "name": "name",
+          "type": "text",
+          "required": false,
+          "unique": false,
+          "options": {
+            "min": null,
+            "max": null,
+            "pattern": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "employees_collection",
+      "name": "employees",
+      "type": "base",
+      "system": false,
+      "schema": [
+        {
+          "system": false,
+          "id": "emp_mac",
+          "name": "mac_address",
+          "type": "text",
+          "required": true,
+          "unique": true,
+          "options": {
+            "min": null,
+            "max": null,
+            "pattern": "^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$"
+          }
+        },
+        {
+          "system": false,
+          "id": "emp_chat",
+          "name": "telegram_chat_id",
+          "type": "number",
+          "required": true,
+          "unique": false
+        },
+        {
+          "system": false,
+          "id": "emp_name",
+          "name": "name",
+          "type": "text",
+          "required": true,
+          "unique": false
+        },
+        {
+          "system": false,
+          "id": "emp_code",
+          "name": "employee_code",
+          "type": "text",
+          "required": false,
+          "unique": false
+        },
+        {
+          "system": false,
+          "id": "emp_dept",
+          "name": "department",
+          "type": "text",
+          "required": false,
+          "unique": false
+        },
+        {
+          "system": false,
+          "id": "emp_time",
+          "name": "work_start_time",
+          "type": "text",
+          "required": false,
+          "unique": false,
+          "options": {
+            "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"
+          }
+        },
+        {
+          "system": false,
+          "id": "emp_active",
+          "name": "is_active",
+          "type": "bool",
+          "required": false
+        }
+      ],
+      "indexes": [
+        "CREATE UNIQUE INDEX idx_emp_mac ON employees (mac_address)"
+      ]
+    },
+    {
+      "id": "attendance_collection",
+      "name": "attendance",
+      "type": "base",
+      "system": false,
+      "schema": [
+        {
+          "system": false,
+          "id": "att_emp_id",
+          "name": "employee_id",
+          "type": "number",
+          "required": true
+        },
+        {
+          "system": false,
+          "id": "att_checkin",
+          "name": "check_in_time",
+          "type": "date",
+          "required": true
+        },
+        {
+          "system": false,
+          "id": "att_checkout",
+          "name": "check_out_time",
+          "type": "date",
+          "required": false
+        },
+        {
+          "system": false,
+          "id": "att_scanner",
+          "name": "scanner_mac",
+          "type": "text",
+          "required": false
+        },
+        {
+          "system": false,
+          "id": "att_status",
+          "name": "status",
+          "type": "text",
+          "required": true
+        },
+        {
+          "system": false,
+          "id": "att_date",
+          "name": "created_date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "scanners_collection",
+      "name": "scanners",
+      "type": "base",
+      "system": false,
+      "schema": [
+        {
+          "system": false,
+          "id": "scan_mac",
+          "name": "scanner_mac",
+          "type": "text",
+          "required": true,
+          "unique": true
+        },
+        {
+          "system": false,
+          "id": "scan_seen",
+          "name": "last_seen",
+          "type": "date",
+          "required": true
+        }
+      ],
+      "indexes": [
+        "CREATE UNIQUE INDEX idx_scan_mac ON scanners (scanner_mac)"
+      ]
+    },
+    {
+      "id": "detections_collection",
+      "name": "employee_detections",
+      "type": "base",
+      "system": false,
+      "schema": [
+        {
+          "system": false,
+          "id": "det_emp_id",
+          "name": "employee_id",
+          "type": "number",
+          "required": true
+        },
+        {
+          "system": false,
+          "id": "det_mac",
+          "name": "mac_address",
+          "type": "text",
+          "required": true
+        },
+        {
+          "system": false,
+          "id": "det_scanner",
+          "name": "scanner_mac",
+          "type": "text",
+          "required": true
+        },
+        {
+          "system": false,
+          "id": "det_rssi",
+          "name": "rssi",
+          "type": "number",
+          "required": true
+        },
+        {
+          "system": false,
+          "id": "det_type",
+          "name": "device_type",
+          "type": "text",
+          "required": false
+        },
+        {
+          "system": false,
+          "id": "det_itag",
+          "name": "is_itag03",
+          "type": "bool",
+          "required": false
+        },
+        {
+          "system": false,
+          "id": "det_time",
+          "name": "detected_at",
+          "type": "date",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "devices_collection",
+      "name": "devices",
+      "type": "base",
+      "system": false,
+      "schema": [
+        {
+          "system": false,
+          "id": "dev_mac",
+          "name": "mac_address",
+          "type": "text",
+          "required": true,
+          "unique": true
+        },
+        {
+          "system": false,
+          "id": "dev_name",
+          "name": "name",
+          "type": "text",
+          "required": false
+        },
+        {
+          "system": false,
+          "id": "dev_whitelist",
+          "name": "is_whitelisted",
+          "type": "bool",
+          "required": false
+        },
+        {
+          "system": false,
+          "id": "dev_rssi",
+          "name": "rssi",
+          "type": "number",
+          "required": false
+        },
+        {
+          "system": false,
+          "id": "dev_seen",
+          "name": "last_seen",
+          "type": "date",
+          "required": false
+        }
+      ],
+      "indexes": [
+        "CREATE UNIQUE INDEX idx_dev_mac ON devices (mac_address)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(go build:*)",
+      "Bash(chmod:*)",
+      "Bash(bash -c '\n# Test loading .env\nexport $\\(cat .env | grep -v \"\"^#\"\" | xargs\\)\necho \"\"✅ POCKETBASE_URL: $POCKETBASE_URL\"\"\necho \"\"✅ POCKETBASE_TOKEN: ${POCKETBASE_TOKEN:0:20}...\"\"\n')",
+      "Bash(source:*)",
+      "Bash(curl:*)",
+      "Bash(python3:*)"
+    ]
+  }
+}

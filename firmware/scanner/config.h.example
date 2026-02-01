@@ -1,0 +1,18 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+// WiFi Configuration
+// Copy this file to config.h and update with your actual credentials
+const char* ssid = "YOUR_WIFI_SSID";
+const char* password = "YOUR_WIFI_PASSWORD";
+
+// Backend API Configuration
+// Update with your backend server IP and port
+const char* backendUrl = "http://YOUR_BACKEND_IP:PORT/api/detect";
+
+// BLE Scan Configuration
+const int rssiThreshold = -70;  // -50 = very close, -70 = ~10m, -80 = far
+const int scanDuration = 5;     // Scan duration in seconds
+const int scanInterval = 10000; // Delay between scans in milliseconds
+
+#endif

@@ -1,0 +1,20 @@
+# Development override for docker-compose
+# This file is automatically loaded by docker-compose when present
+
+services:
+  app:
+    build:
+      target: builder  # Use build stage for development
+    volumes:
+      - .:/app
+      - go_cache:/go/pkg/mod
+    environment:
+      - GO_ENV=development
+      - DEBUG=true
+    command: ["go", "run", "main.go"]
+    # Disable health check in development
+    healthcheck:
+      disable: true
+
+volumes:
+  go_cache:

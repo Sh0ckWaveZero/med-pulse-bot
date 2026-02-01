@@ -1,0 +1,84 @@
+{
+  "description": "Add is_target_device and device_name fields to employee_detections collection",
+  "collections": [
+    {
+      "id": "detections_collection",
+      "name": "employee_detections",
+      "type": "base",
+      "system": false,
+      "schema": [
+        {
+          "system": false,
+          "id": "det_emp_id",
+          "name": "employee_id",
+          "type": "number",
+          "required": true
+        },
+        {
+          "system": false,
+          "id": "det_mac",
+          "name": "mac_address",
+          "type": "text",
+          "required": true
+        },
+        {
+          "system": false,
+          "id": "det_scanner",
+          "name": "scanner_mac",
+          "type": "text",
+          "required": true
+        },
+        {
+          "system": false,
+          "id": "det_rssi",
+          "name": "rssi",
+          "type": "number",
+          "required": true
+        },
+        {
+          "system": false,
+          "id": "det_type",
+          "name": "device_type",
+          "type": "text",
+          "required": false
+        },
+        {
+          "system": false,
+          "id": "det_itag",
+          "name": "is_itag03",
+          "type": "bool",
+          "required": false
+        },
+        {
+          "system": false,
+          "id": "det_target",
+          "name": "is_target_device",
+          "type": "bool",
+          "required": false,
+          "options": {
+            "default": false
+          }
+        },
+        {
+          "system": false,
+          "id": "det_name",
+          "name": "device_name",
+          "type": "text",
+          "required": false,
+          "options": {
+            "min": null,
+            "max": 255,
+            "pattern": ""
+          }
+        },
+        {
+          "system": false,
+          "id": "det_time",
+          "name": "detected_at",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}
