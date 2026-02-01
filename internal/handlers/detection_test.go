@@ -8,8 +8,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"telegram-bot-med/internal/models"
-	"telegram-bot-med/internal/services"
+	"med-pulse-bot/internal/models"
+	"med-pulse-bot/internal/services"
 )
 
 // mockAttendanceService is a mock implementation for testing

@@ -9,11 +9,11 @@ import (
 	"syscall"
 	"time"
 
-	"telegram-bot-med/bot"
-	"telegram-bot-med/config"
-	"telegram-bot-med/internal/handlers"
-	"telegram-bot-med/internal/repository"
-	"telegram-bot-med/internal/services"
+	"med-pulse-bot/bot"
+	"med-pulse-bot/config"
+	"med-pulse-bot/internal/handlers"
+	"med-pulse-bot/internal/repository"
+	"med-pulse-bot/internal/services"
 )
 
 func main() {

@@ -14,7 +14,7 @@ import (
 	"strings"
 	"time"
 
-	"telegram-bot-med/internal/models"
+	"med-pulse-bot/internal/models"
 )
 
 // PocketBaseRESTEmployeeRepository implements EmployeeRepository

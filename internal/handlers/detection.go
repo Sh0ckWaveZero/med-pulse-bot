@@ -6,8 +6,8 @@ import (
 	"log"
 	"net/http"
 
-	"telegram-bot-med/internal/models"
-	"telegram-bot-med/internal/services"
+	"med-pulse-bot/internal/models"
+	"med-pulse-bot/internal/services"
 )
 
 // DetectionHandler handles BLE device detection requests

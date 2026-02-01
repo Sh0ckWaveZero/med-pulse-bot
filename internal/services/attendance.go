@@ -7,8 +7,8 @@ import (
 	"log"
 	"time"
 
-	"telegram-bot-med/internal/models"
-	"telegram-bot-med/internal/repository"
+	"med-pulse-bot/internal/models"
+	"med-pulse-bot/internal/repository"
 )
 
 // AttendanceProcessor defines the interface for attendance processing

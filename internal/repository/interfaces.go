@@ -3,7 +3,7 @@ package repository
 
 import (
 	"context"
-	"telegram-bot-med/internal/models"
+	"med-pulse-bot/internal/models"
 )
 
 // EmployeeRepository defines the interface for employee data access

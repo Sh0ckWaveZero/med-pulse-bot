@@ -6,7 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: telegram-bot-app
+    container_name: med-pulse-bot-app
     restart: unless-stopped
     environment:
       POCKETBASE_HTTP: 0.0.0.0:8090

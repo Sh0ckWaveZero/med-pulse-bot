@@ -37,7 +37,7 @@ go mod tidy
 ### Imports
 - Group imports: stdlib → third-party → local packages
 - Separate groups with blank line
-- Use full import paths for local packages: `telegram-bot-med/package`
+- Use full import paths for local packages: `med-pulse-bot/package`
 
 Example:
 ```go
@@ -49,7 +49,7 @@ import (
     "github.com/pocketbase/pocketbase"
     "github.com/pocketbase/pocketbase/core"
 
-    "telegram-bot-med/config"
+    "med-pulse-bot/config"
 )
 ```
 
@@ -90,7 +90,7 @@ import (
 ## Project Structure
 
 ```
-telegram-bot-med/
+med-pulse-bot/
 ├── main.go              # Application entry point
 ├── config/              # Configuration loading
 │   └── config.go

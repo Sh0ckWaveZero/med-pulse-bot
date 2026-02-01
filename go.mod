@@ -1,4 +1,4 @@
-module telegram-bot-med
+module med-pulse-bot
 
 go 1.25.6
 
